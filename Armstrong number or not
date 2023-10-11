@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+public class ArmstrongNumber {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        int number = scanner.nextInt();
+
+        int sumOfCubes = 0;
+        int temp = number;
+
+        while (temp > 0) {
+            int digit = temp % 10;
+            sumOfCubes += digit * digit * digit;
+            temp /= 10;
+        }
+
+        if (sumOfCubes == number) {
+            System.out.println(number + " is an Armstrong Number.");
+        } else {
+            System.out.println("Not Armstrong Number");
+        }
+    }
+}
