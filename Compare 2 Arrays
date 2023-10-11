@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int n = scanner.nextInt();
+        int[] arr1 = new int[n];
+        int[] arr2 = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr1[i] = scanner.nextInt();
+        }
+
+        for (int i = 0; i < n; i++) {
+            arr2[i] = scanner.nextInt();
+        }
+
+        String result = compareArrays(n, arr1, arr2);
+        System.out.println(result);
+    }
+
+    public static String compareArrays(int n, int[] arr1, int[] arr2) {
+        if (arr1.length != arr2.length) {
+            return "no";
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (arr1[i] != arr2[i]) {
+                return "no";
+            }
+        }
+
+        return "yes";
+    }
+}
