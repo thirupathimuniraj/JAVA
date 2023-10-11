@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String[]args)
+    {
+        Scanner myObj =new Scanner(System.in);
+        float d =myObj.nextFloat();
+        float t =myObj.nextFloat();
+        float s =d/t;
+        int sp =(int)s;
+        System.out.println("Speed of car: "+sp+" km/hr");
+        myObj.close();
+    }
+}
