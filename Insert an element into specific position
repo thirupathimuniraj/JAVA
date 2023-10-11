@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class ArrayInsertion
+{
+    public static void main(String[] args) 
+    {
+        Scanner scanner = new Scanner(System.in);
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++)
+        {
+            array[i] = scanner.nextInt();
+        }
+        int position = scanner.nextInt();
+        int value = scanner.nextInt();
+        if (position < 1 || position > size + 1) 
+        {
+         System.out.print("Original array: ");
+            for (int i = 0; i < size; i++) 
+            {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println("\nInvalid position!");
+        } else
+        {
+            int[] updatedArray = new int[size + 1];
+
+            for (int i = 0; i < position - 1; i++)
+            {
+                updatedArray[i] = array[i];
+            }
+
+            updatedArray[position - 1] = value;
+
+            for (int i = position; i <= size; i++)
+            {
+                updatedArray[i] = array[i - 1];
+            }
+
+            System.out.print("Original array: ");
+            for (int i = 0; i < size; i++) 
+            {
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+            System.out.print("Updated array: ");
+            for (int i = 0; i < size + 1; i++)
+            {
+                System.out.print(updatedArray[i] + " ");
+            }
+        }
+
+        scanner.close();
+    }
+}
