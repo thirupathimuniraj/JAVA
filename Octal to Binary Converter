@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        int octNum,decNum=0;int n=0;
+        
+        Scanner scn = new Scanner(System.in);
+        octNum=scn.nextInt();
+        
+        while(octNum>0)
+        {
+            int temp= octNum %10;
+            decNum+=temp*Math.pow (8,n);
+            octNum=octNum/10;
+            n++;
+        }
+        
+        int binNum[]=new int[20];
+        int i=0;
+        
+        while(decNum>0)
+        {
+            int r= decNum%2;
+            binNum[i++]=r;
+            decNum=decNum/2;
+            
+        }
+        
+        for(int j=i-1;j>=0;j--)
+        {
+            System.out.print(binNum[j]);
+        }
+        
+    }
+}
