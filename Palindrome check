@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        int a;
+        int rem,rev=0;
+        
+        Scanner scn = new Scanner(System.in);
+        a = scn.nextInt();
+        int temp=a;
+        
+         while(a>0)
+        {
+            rem=a%10;
+            rev=rev*10+rem;
+            a=a/10;
+        }
+        if(temp==rev)
+        {
+            System.out.println("Same");
+        }
+    
+        else
+        {
+            System.out.println("Not Same");
+        }
+    
+    }
+}
